@@ -100,10 +100,10 @@ struct ReelInfoView: View {
 
 struct ReelInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        ReelInfoView(video: Video(player: AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "reel_7", ofType: "mp4")!)),
-                                  likes: "17M",
-                                  comments: "2k",
-                                  caption: "After all, for mankind as a whole there are no exports. We did not start developing by obtaining foreign exchange from Mars or the moon. Mankind is a closed society.",
-                                  user: User(userName: "fernandotorres", userImage: "user_11")))
+        ReelInfoView(video: Video(player: AVPlayer(url: Bundle.main.url(forResource: "reel_7", withExtension: "mp4")!),
+                                  likes: "1.2M",
+                                  comments: "45.2K",
+                                  caption: "Amazing goal! ⚽️",
+                                  user: User(userName: "cristiano", userImage: "user_8")))
     }
 }

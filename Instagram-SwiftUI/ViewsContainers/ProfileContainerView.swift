@@ -9,45 +9,72 @@ import SwiftUI
 
 struct ProfileContainerView: View {
     private let user: User = User(userName: "pankajgaikar", userImage: "user_16")
+    @EnvironmentObject var photoUploader: PhotoUploader
+    @State private var showingUploadAlert = false
     
     var body: some View {
         NavigationView {
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack {
-                    ProfileHeader(user: user)
-                    ProfileControlButtonsView()
-                    ProfileMediaSelectionView()
-                    PostGridView(posts: MockData().posts)
+            VStack(spacing: 0) {
+                // Upload status view at the top
+                if photoUploader.isUploading || photoUploader.uploadStatus != .idle {
+                    UploadStatusView(photoUploader: photoUploader)
+                        .padding(.horizontal, 16)
+                        .padding(.top, 8)
+                }
+                
+                ScrollView(.vertical, showsIndicators: false) {
+                    VStack {
+                        ProfileHeader(user: user)
+                        ProfileControlButtonsView()
+                        ProfileMediaSelectionView()
+                        PostGridView(posts: MockData().posts)
+                    }
                 }
             }
-            .navigationBarTitle("", displayMode: .inline)
-                .toolbar(content: {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Text("Pankaj Gaikar")
-                            .font(Font.system(size: 20, weight: .bold))
-                            .padding()
-                            .frame(width: UIScreen.main.bounds.size.width / 2, alignment: .leading)
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        HStack {
-                            Image(systemName: "plus.app")
-                                .resizable()
-                                .frame(width: 25, height: 25)
-                                .padding(.trailing, 10)
-                            Image(systemName: "line.horizontal.3")
-                                .resizable()
-                                .frame(width: 25, height: 20)
-                        }
-                    }
-                })
         }
+        .navigationBarTitle("", displayMode: .inline)
+        .toolbar(content: {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Text("Pankaj Gaikar")
+                    .font(Font.system(size: 20, weight: .bold))
+                    .padding()
+                    .frame(width: UIScreen.main.bounds.size.width / 2, alignment: .leading)
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                HStack {
+                    Button(action: {
+                        showingUploadAlert = true
+                    }) {
+                        Image(systemName: "plus.app")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                            .foregroundColor(.primary)
+                    }
+                    .padding(.trailing, 10)
+                    
+                    Image(systemName: "line.horizontal.3")
+                        .resizable()
+                        .frame(width: 25, height: 20)
+                }
+            }
+        })
+//        .alert("Auto Upload", isPresented: $showingUploadAlert) {
+//            Button("Start Upload") {
+//                photoUploader.startAutomaticUpload()
+//            }
+//            Button("Cancel", role: .cancel) { }
+//        } message: {
+//            Text("This will automatically upload all your favorited photos and videos to Instagram in the background, similar to Google Photos.")
+//        }
     }
 }
+
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ProfileContainerView()
+                .environmentObject(PhotoUploader())
         }
     }
 }

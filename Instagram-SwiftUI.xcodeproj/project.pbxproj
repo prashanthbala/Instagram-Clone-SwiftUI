@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88ADDA602E4079B800A442ED /* BackgroundUploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ADDA5E2E4079B800A442ED /* BackgroundUploadManager.swift */; };
+		88ADDA612E4079B800A442ED /* PhotoUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ADDA5F2E4079B800A442ED /* PhotoUploader.swift */; };
+		88ADDA642E4079DE00A442ED /* UploadStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ADDA632E4079DE00A442ED /* UploadStatusView.swift */; };
+		88ADDA652E4079DE00A442ED /* UploadSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ADDA622E4079DE00A442ED /* UploadSettingsView.swift */; };
 		BF126359265AC3650062BE6A /* ProfileMediaSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF126358265AC3650062BE6A /* ProfileMediaSelectionView.swift */; };
 		BF126363265B98930062BE6A /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF126362265B98930062BE6A /* Video.swift */; };
 		BF126364265B9B2F0062BE6A /* reel_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BF12635F265B939C0062BE6A /* reel_1.mp4 */; };
@@ -62,10 +66,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		88ADDA5E2E4079B800A442ED /* BackgroundUploadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundUploadManager.swift; sourceTree = "<group>"; };
+		88ADDA5F2E4079B800A442ED /* PhotoUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUploader.swift; sourceTree = "<group>"; };
+		88ADDA622E4079DE00A442ED /* UploadSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadSettingsView.swift; sourceTree = "<group>"; };
+		88ADDA632E4079DE00A442ED /* UploadStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadStatusView.swift; sourceTree = "<group>"; };
 		BF126358265AC3650062BE6A /* ProfileMediaSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMediaSelectionView.swift; sourceTree = "<group>"; };
 		BF12635B265B939B0062BE6A /* reel_6.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = reel_6.mp4; sourceTree = "<group>"; };
 		BF12635C265B939C0062BE6A /* reel_7.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = reel_7.mp4; sourceTree = "<group>"; };
-		BF12635D265B939C0062BE6A /* reel_4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = reel_4.mp4; sourceTree = "<group>"; };
+		BF12635D265B939C0062BE6A /* reel_4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = text; path = reel_4.mp4; sourceTree = "<group>"; };
 		BF12635E265B939C0062BE6A /* reel_5.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = reel_5.mp4; sourceTree = "<group>"; };
 		BF12635F265B939C0062BE6A /* reel_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = reel_1.mp4; sourceTree = "<group>"; };
 		BF126360265B939C0062BE6A /* reel_3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = reel_3.mp4; sourceTree = "<group>"; };
@@ -147,6 +155,8 @@
 		BF95516326185FF1002C61A3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				88ADDA622E4079DE00A442ED /* UploadSettingsView.swift */,
+				88ADDA632E4079DE00A442ED /* UploadStatusView.swift */,
 				BFB34FAD26597E3500991B1C /* ActivityView.swift */,
 				BF95516426186004002C61A3 /* StoryView.swift */,
 				BF95516C26186134002C61A3 /* PostView.swift */,
@@ -239,6 +249,8 @@
 		BFCD251D261A08FB00AEBEEF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				88ADDA5E2E4079B800A442ED /* BackgroundUploadManager.swift */,
+				88ADDA5F2E4079B800A442ED /* PhotoUploader.swift */,
 				BFCD251E261A090F00AEBEEF /* Story.swift */,
 				BFCD2526261A099100AEBEEF /* Post.swift */,
 				BFB34FA926596DDA00991B1C /* Activity.swift */,
@@ -407,6 +419,8 @@
 				BFA51A65265AB34900F06F45 /* PostGridView.swift in Sources */,
 				BFB3431D2618412C006D6828 /* TimeLineContainerView.swift in Sources */,
 				BFB34FAC2659789F00991B1C /* User.swift in Sources */,
+				88ADDA642E4079DE00A442ED /* UploadStatusView.swift in Sources */,
+				88ADDA652E4079DE00A442ED /* UploadSettingsView.swift in Sources */,
 				BFA51A62265A974100F06F45 /* ProfileHeader.swift in Sources */,
 				BFA51A67265AB90D00F06F45 /* ProfileControlButtonsView.swift in Sources */,
 				BFB342EC26183B90006D6828 /* Instagram_SwiftUIApp.swift in Sources */,
@@ -417,6 +431,8 @@
 				BFB3433026184163006D6828 /* ActivityContainerView.swift in Sources */,
 				BF126363265B98930062BE6A /* Video.swift in Sources */,
 				BFCD251F261A090F00AEBEEF /* Story.swift in Sources */,
+				88ADDA602E4079B800A442ED /* BackgroundUploadManager.swift in Sources */,
+				88ADDA612E4079B800A442ED /* PhotoUploader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
